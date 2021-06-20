@@ -25,7 +25,7 @@ let results=[];
 
 function Item(name,src,view){
     this.name=name;
-    this.src=https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg`;
+    this.src=`img/${src}`;
     this.view=0;
     this.clicked=0;
     Item.product.push(this);
@@ -37,7 +37,7 @@ console.log(Item.product)
 
 for( let i = 0; i < imgArray.length; i++ ) {
 
-new Item(imgArray[i].split('.')[0],https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg)
+new Item(imgArray[i].split('.')[0],imgArray[i])
 
 }
 
