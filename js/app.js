@@ -25,7 +25,7 @@ let results=[];
 
 function Item(name,src,view){
     this.name=name;
-    this.src=`img/${src}`;
+    this.src=`./img/${src}`;
     this.view=0;
     this.clicked=0;
     Item.product.push(this);
