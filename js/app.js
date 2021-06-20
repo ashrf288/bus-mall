@@ -18,7 +18,7 @@ let middleImage=document.getElementById('middleImage');
 let rightImage=document.getElementById('rightImage');
 let resultsP=document.getElementById('resultsP');
 let resultButton=document.getElementById('result-button');
-let counter=0;
+let  counter=0;
 let results=[];
 
 
