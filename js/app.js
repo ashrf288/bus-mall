@@ -82,7 +82,7 @@ new Item(imgArray[i].split('.')[0],imgArray[i])
 
 function eventHandler(e) {
     // console.log(e.target.id);
-    if((e.target.id === 'rightImage' || e.target.id === 'leftImage'||event.target.id==='middleImage') && counter <25){
+    if((e.target.id === 'rightImage' || e.target.id === 'leftImage'||event.target.id==='middleImage') && counter < 25){
       render();
       
       counter++;
@@ -133,8 +133,7 @@ function result(){
   
   if(counter===25){
     for( let i = 0; i < imgArray.length; i++ ) {
-    //  console.log(`${Item.product[i].name} had ${Item.product[i].clicked} votes
-    //  and was viewed ${Item.product[i].view} times `)
+    
 
      results.push(`${Item.product[i].name} had ${Item.product[i].clicked} votes
      and was viewed ${Item.product[i].view} times `)
