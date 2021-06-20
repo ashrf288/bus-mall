@@ -37,7 +37,7 @@ console.log(Item.product)
 
 for( let i = 0; i < imgArray.length; i++ ) {
 
-new Item('img/bag.jpg',imgArray[i])
+new Item(imgArray[i].split('.')[0],imgArray[i])
 
 }
 
