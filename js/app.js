@@ -122,6 +122,7 @@ function somthing(e){
  if (e.target.src.split('00/')[1]===Item.product[j].src){
    Item.product[j].clicked++
    console.log(Item.product[j].clicked)
+      
  }
  
   }
@@ -135,7 +136,7 @@ function result(){
     for( let i = 0; i < imgArray.length; i++ ) {
     //  console.log(`${Item.product[i].name} had ${Item.product[i].clicked} votes
     //  and was viewed ${Item.product[i].view} times `)
-
+      console.log(Item.product[j].clicked)
      results.push(`${Item.product[i].name} had ${Item.product[i].clicked} votes
      and was viewed ${Item.product[i].view} times `)
 
