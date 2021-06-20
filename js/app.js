@@ -118,9 +118,8 @@ rightImage.addEventListener('click',somthing)
 
 function somthing(e){
   for(let j=0;j<imgArray.length;j++){
-
  if (e.target.src.split('00/')[1]===Item.product[j].src){
-     console.log(clicked)
+     
    Item.product[j].clicked++
    console.log(Item.product[j].clicked)
  }
