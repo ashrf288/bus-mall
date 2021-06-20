@@ -25,7 +25,7 @@ let results=[];
 
 function Item(name,src,view){
     this.name=name;
-    this.src=`img/${src}`;
+    this.src=https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg`;
     this.view=0;
     this.clicked=0;
     Item.product.push(this);
