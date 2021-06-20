@@ -68,3 +68,10 @@ footer{
     margin-bottom:0px ;
     background-color: #f7f7f7;
 }
+button{
+    background-color: red;
+    color: white;
+    font-size: 15px;
+    border-radius: 12px;
+    padding: 5px;
+}

@@ -60,9 +60,9 @@ new Item(imgArray[i].split('.')[0],imgArray[i])
 
       //  console.log(Item.product[middleIndex].src)
 
-       leftImage.src=Item.product[leftIndex].src;
-       middleImage.src=Item.product[middleIndex].src;
-       rightImage.src=Item.product[rightIndex].src;
+       leftImage.setAttribute('src',Item.product[leftIndex].src);
+       middleImage.setAttribute('src',Item.product[middleIndex].src);
+       rightImage.setAttribute('src',Item.product[rightIndex].src);
      
 
        ///views counter
@@ -82,7 +82,7 @@ new Item(imgArray[i].split('.')[0],imgArray[i])
 
 function eventHandler(e) {
     // console.log(e.target.id);
-    if((e.target.id === 'rightImage' || e.target.id === 'leftImage'||event.target.id==='middleImage') && counter < 25){
+    if((e.target.id === 'rightImage' || e.target.id === 'leftImage'||event.target.id==='middleImage') && counter <25){
       render();
       
       counter++;
