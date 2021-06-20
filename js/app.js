@@ -37,7 +37,7 @@ console.log(Item.product)
 
 for( let i = 0; i < imgArray.length; i++ ) {
 
-new Item(imgArray[i].split('.')[0],'https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg')
+new Item(imgArray[i].split('.')[0],https://www.imagesource.com/wp-content/uploads/2019/06/Rio.jpg)
 
 }
 
