@@ -18,7 +18,7 @@ let middleImage=document.getElementById('middleImage');
 let rightImage=document.getElementById('rightImage');
 let resultsP=document.getElementById('resultsP');
 let resultButton=document.getElementById('result-button');
-let  counter=0;
+let counter=0;
 let results=[];
 
 
@@ -60,9 +60,9 @@ new Item(imgArray[i].split('.')[0],imgArray[i])
 
       //  console.log(Item.product[middleIndex].src)
 
-       leftImage.setAttribute('src',Item.product[leftIndex].src);
-       middleImage.setAttribute('src',Item.product[middleIndex].src);
-       rightImage.setAttribute('src',Item.product[rightIndex].src);
+       leftImage.src=Item.product[leftIndex].src;
+       middleImage.src=Item.product[middleIndex].src;
+       rightImage.src=Item.product[rightIndex].src;
      
 
        ///views counter
@@ -133,7 +133,8 @@ function result(){
   
   if(counter===25){
     for( let i = 0; i < imgArray.length; i++ ) {
-    
+    //  console.log(`${Item.product[i].name} had ${Item.product[i].clicked} votes
+    //  and was viewed ${Item.product[i].view} times `)
 
      results.push(`${Item.product[i].name} had ${Item.product[i].clicked} votes
      and was viewed ${Item.product[i].view} times `)
