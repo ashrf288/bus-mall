@@ -16,7 +16,7 @@ let imageSection=document.getElementById('imageSection')
 let leftImage=document.getElementById('leftImage');
 let middleImage=document.getElementById('middleImage');
 let rightImage=document.getElementById('rightImage');
-let resultsP=document.getElementById('resultsP');
+let resultsP=document.getElementById('resultsul');
 let resultButton=document.getElementById('result-button');
 let counter=0;
 let results=[];
@@ -169,12 +169,21 @@ function result(){
     //  console.log(`${Item.product[i].name} had ${Item.product[i].clicked} votes
     //  and was viewed ${Item.product[i].view} times `)
 
-     results.push(`${Item.product[i].name} had ${Item.product[i].clicked} votes
-     and was viewed ${Item.product[i].view} times `)
+    //  results.push(`${Item.product[i].name} had ${Item.product[i].clicked} votes
+    //  and was viewed ${Item.product[i].view} times `)
       Item.totalViews.push(Item.product[i].view);
       Item.totalClicks.push(Item.product[i].clicked);
+      
+      let listItem=document.createElement('li');
+      listItem.textContent=`${Item.product[i].name} had ${Item.product[i].clicked} votes
+      and was viewed ${Item.product[i].view} times `;
+      
+      resultsP.appendChild(listItem);
+     
+
+
   }
-  resultsP.textContent=results;
+  // resultsP.textContent=results;
 
   
 }
