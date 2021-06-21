@@ -73,3 +73,9 @@ body{
      border-radius: 12px;
      padding: 5px;
  }
+
+
+ li{
+     list-style-type: circle;
+     padding :10px;
+ }
