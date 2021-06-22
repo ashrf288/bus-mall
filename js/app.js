@@ -204,8 +204,8 @@ function result() {
         
       
       let listItem = document.createElement('li');
-      listItem.textContent = `${Item.product[j].name} had ${bok} votes
-      and was viewed ${nok} times `;
+      listItem.textContent = `${Item.product[j].name} had ${nok} votes
+      and was viewed ${bok} times `;
       grandTotalViews.push(bok);
       grandTotalClicks.push(nok);
 
