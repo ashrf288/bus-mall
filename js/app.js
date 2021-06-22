@@ -20,8 +20,19 @@ let resultsP = document.getElementById('resultsul');
 let resultButton = document.getElementById('result-button');
 let counter = 0;
 let results = [];
-
-
+//////
+let bok=0
+let nok=0
+///////
+let oldViews=[];
+let oldVotes=[];
+let grandTotalViews=[]
+     let grandTotalClicks=[]
+   
+for(let m=0;m<imgArray.length;m++){
+  oldViews.push(bok);
+  oldVotes.push(nok)
+}
 
 function Item(name, src, view) {
   this.name = name;
@@ -97,7 +108,7 @@ function render() {
 
 
 
-  //  console.log(Item.product[middleIndex].src)
+  //  
 
   leftImage.src = Item.product[leftIndex].src;
   middleImage.src = Item.product[middleIndex].src;
@@ -154,7 +165,7 @@ function clickCounter(e) {
     if (e.target.src.split('00/')[1] == Item.product[j].src) {
 
       Item.product[j].clicked++
-      //  console.log(Item.product[j].clicked)
+    
     }
 
   }
@@ -169,23 +180,48 @@ function result() {
       Item.totalViews.push(Item.product[i].view);
       Item.totalClicks.push(Item.product[i].clicked);
 
-      let listItem = document.createElement('li');
-      listItem.textContent = `${Item.product[i].name} had ${Item.product[i].clicked} votes
-      and was viewed ${Item.product[i].view} times `;
+      // localStorage.removeItem(`oldViwes${i}`)
+      // localStorage.removeItem(`oldVotes${i}`)
 
-      resultsP.appendChild(listItem);
-
+  
+      // ///////////////////////////////////////////////////////////////////
+      
 
 
     }
-    // resultsP.textContent=results;
 
+     
+  
+    for (let j = 0; j < imgArray.length; j++) {
+
+    
+
+       bok=Item.product[j].view+JSON.parse( localStorage.getItem(`oldViwes${j}`));
+       nok=Item.product[j].clicked+JSON.parse( localStorage.getItem(`oldVotes${j}`));
+     
+      localStorage.setItem(`oldViwes${j}`,JSON.stringify(bok))
+      localStorage.setItem(`oldVotes${j}`,JSON.stringify(nok))
+        
+      
+      let listItem = document.createElement('li');
+      listItem.textContent = `${Item.product[j].name} had ${bok} votes
+      and was viewed ${nok} times `;
+      grandTotalViews.push(bok);
+      grandTotalClicks.push(nok);
+
+      resultsP.appendChild(listItem);
+
+      
+     
+    
+
+      }
+      chart();
 
   }
-  chart();
+  
+  
 }
-
-
 
 
 
@@ -198,7 +234,7 @@ function chart() {
       labels: Item.nameS,
       datasets: [{
         label: '# of Viwes',
-        data: Item.totalViews,
+        data: grandTotalViews,
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
 
@@ -210,7 +246,7 @@ function chart() {
         borderWidth: 1
       }, {
         label: '# of clicks',
-        data: Item.totalClicks,
+        data: grandTotalClicks,
         backgroundColor: [
 
           'rgba(54, 162, 235, 0.2)',
@@ -235,3 +271,4 @@ function chart() {
   });
 
 }
+
